@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Ishika 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1: #ff9a9e;
+    --bg2: #fad0c4;
+    --bg3: #fbc2eb;
+    --bg4: #a18cd1;
+    --glowA: rgba(255,107,154,0.85);
+    --glowB: rgba(161,140,209,0.85);
+  }
+  html,body{
+    height:100%;margin:0;
+    font-family:Roboto,Segoe UI,Arial,sans-serif;
+    background:linear-gradient(120deg,var(--bg1),var(--bg2),var(--bg3),var(--bg4));
+    background-size:1200% 1200%;
+    animation:bgAnim 18s linear infinite; 
+    color:#111;
+    cursor:none; /* hide default cursor */
+  }
+  @keyframes bgAnim{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+ 
+  .page{max-width:1180px;margin:18px auto 80px;padding:22px;}
+  header{text-align:center;margin-bottom:8px}
+  h1{
+    font-family:"Great Vibes",cursive;font-size:3.6rem;
+    margin:6px 0;line-height:1;color:#fff;
+    text-shadow:0 10px 30px rgba(0,0,0,0.25);
+    transform-origin:center; animation:pop 2s ease;
+  }
+  @keyframes pop{0%{transform:scale(.95)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+ 
+  .message{
+    max-width:900px;margin:0 auto 20px;padding:14px 18px;border-radius:12px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));
+    color:#222;font-size:1.05rem; box-shadow:0 12px 30px rgba(0,0,0,0.12)
+  }
+ 
+  .row{display:flex;gap:20px;justify-content:center;align-items:center;margin:18px 0;flex-wrap:wrap}
+  .two{justify-content:center}
+  .centered{justify-content:center;flex-direction:column}
+ 
+  .media-wrap{
+    padding:8px; border-radius:16px; position:relative;
+    background:linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+  }
+ 
+  .media-wrap::before{
+    content:""; position:absolute; inset:-4px; z-index:-1; border-radius:20px;
+    background:linear-gradient(90deg, rgba(255,107,154,0.9), rgba(255,200,120,0.9), rgba(161,140,209,0.9));
+    filter:blur(14px); opacity:0.85; animation:glowBorder 10s linear infinite;
+  }
+  @keyframes glowBorder{
+    0%{filter:blur(8px) hue-rotate(0deg)}
+    50%{filter:blur(18px) hue-rotate(80deg)}
+    100%{filter:blur(8px) hue-rotate(0deg)}
+  }
+ 
+  img.photo{display:block; width:520px; max-width:92vw; height:auto; border-radius:12px; object-fit:cover;}
+  video.big{display:block; width:820px; max-width:94vw; height:auto; border-radius:12px; background:#000;}
+  .single-img{ display:flex; justify-content:center; width:100% }
+ 
+  #startOverlay{
+    position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:9999;
+    background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.55)); color:#fff; flex-direction:column;
+    gap:14px; padding:18px; text-align:center; display:none;
+  }
+  #startOverlay button{
+    background:linear-gradient(90deg,var(--glowA),var(--glowB));
+    border:none; padding:12px 22px; color:#fff; font-size:1.05rem; border-radius:10px; cursor:pointer; 
+    box-shadow:0 8px 22px rgba(0,0,0,0.2)
+  }
+ 
+  #effects{position:fixed; inset:0; pointer-events:none; z-index:800; overflow:hidden;}
+ 
+  .floating{position:absolute; will-change:transform,opacity; display:flex; align-items:center; justify-content:center;}
+  .confetti{width:12px; height:10px; transform-origin:center; border-radius:2px; opacity:0.95;}
+  .balloon{width:44px; height:60px; border-radius:50% 50% 46% 46%/60% 60% 40% 40%; box-shadow:0 8px 18px rgba(0,0,0,0.18);}
+  .balloon::after{content:""; position:absolute; left:50%; bottom:-18px; width:2px; height:24px; background:rgba(0,0,0,0.45); transform:translateX(-50%); border-radius:2px;}
+  .heart{width:26px;height:26px; transform:rotate(-45deg); background: linear-gradient(180deg,#ff6b9a,#ff3567); border-radius: 50% 50% 0 0; box-shadow:0 8px 16px rgba(0,0,0,0.12);}
+  .sparkle{width:8px;height:8px;border-radius:50%; background:radial-gradient(circle,#fff,#ffe6f0); box-shadow:0 0 10px rgba(255,255,255,0.9);}
+
+  /* Snowflake / Bubble */
+  .snowflake {width: 10px; height: 10px; background: radial-gradient(circle, #cce6ff 70%, transparent); border-radius: 50%; box-shadow: 0 0 10px #ccf3ff; opacity: 0.75;}
+  /* Firework spark */
+  .firework-spark {position: absolute; width: 6px; height: 6px; background: radial-gradient(circle, #ffe066 80%, transparent); border-radius: 50%; box-shadow: 0 0 8px #ffd93b, 0 0 14px #ffec42; opacity: 0.9;}
+
+  @media(max-width:980px){img.photo{width:46vw} video.big{width:86vw}}
+
+  /* Glowing custom cursor */
+  .cursor-dot {
+    position: fixed; top: 0; left: 0;
+    width: 14px; height: 14px; background: radial-gradient(circle, #fff, #ff6b9a);
+    border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255, 107, 154, 0.8), 0 0 20px rgba(161, 140, 209, 0.7);
+    z-index: 10000;
+  }
+  .cursor-outline {
+    position: fixed; top: 0; left: 0;
+    width: 34px; height: 34px; border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out; z-index: 10000;
+  }
+</style>
+</head>
+<body>
+<div id="effects" aria-hidden="true"></div>
+
+<div class="page">
+  <header>
+    <h1>Happy Birthday, Ishika 🎉</h1>
+    <div class="message">
+      Happy birthday to you dear Ishika, every day is special for you, but today is special for all and I wish we could celebrate it and make it more special...
+    </div>
+  </header>
+
+  <div class="row two"><div class="media-wrap"><img class="photo" src="images/photo1.jpg"></div><div class="media-wrap"><img class="photo" src="images/photo2.jpg"></div></div>
+  <div class="row centered"><div class="media-wrap"><video id="video1" class="big" playsinline muted><source src="images/video1.mp4" type="video/mp4"></video></div></div>
+  <div class="row two"><div class="media-wrap"><img class="photo" src="images/photo3.jpg"></div><div class="media-wrap"><img class="photo" src="images/photo4.jpg"></div></div>
+  <div class="row centered"><div class="media-wrap"><video id="video2" class="big" playsinline muted><source src="images/video2.mp4" type="video/mp4"></video></div></div>
+  <div class="row single-img"><div class="media-wrap"><img class="photo" src="images/photo5.jpg" style="width:640px;max-width:92vw"></div></div>
+</div>
+
+<div id="startOverlay"><div style="font-size:1.4rem; font-weight:600">Click to start the celebration 🎶</div><button id="startBtn">Start Celebration</button></div>
+
+<script>
+const tracks = ['songs/song1.mp3','songs/song2.mp3','songs/song3.mp3'];
+let trackIndex = 0;
+const audio = new Audio(); audio.preload = 'auto'; audio.src = tracks[trackIndex];
+function tryStartAudio(){ audio.play().then(()=> document.getElementById('startOverlay').style.display='none')
+.catch(()=> document.getElementById('startOverlay').style.display='flex'); }
+audio.addEventListener('ended', ()=>{ trackIndex = (trackIndex+1)%tracks.length; audio.src = tracks[trackIndex]; audio.play().catch(()=>{}); });
+document.getElementById('startBtn').onclick=()=>{tryStartAudio();startEffects();startVideos();};
+window.addEventListener('click',()=>{tryStartAudio();startEffects();startVideos();},{once:true});
+window.onload=()=>tryStartAudio();
+
+const v1=document.getElementById('video1'), v2=document.getElementById('video2');
+function safePlay(v){if(v){v.muted=true;v.play().catch(()=>{});}}
+function startVideos(){safePlay(v1);safePlay(v2);}
+[v1,v2].forEach(v=>v&&v.addEventListener('ended',()=>setTimeout(()=>{v.currentTime=0;v.play().catch(()=>{});},3000)));
+
+const effectsRoot=document.getElementById('effects');
+function rand(a,b){return Math.random()*(b-a)+a;}
+function makeElt(t,c){const e=document.createElement(t);if(c)e.className=c;return e;}
+
+function spawnConfetti(){const c=makeElt('div','confetti floating');c.style.left=rand(5,95)+'vw';c.style.top=rand(5,95)+'vh';c.style.background=`hsl(${rand(0,360)},80%,60%)`;effectsRoot.appendChild(c);const dur=rand(2600,4200);c.animate([{transform:'translateY(0)',opacity:1},{transform:`translateY(${rand(30,220)}vh)`,opacity:0}],{duration:dur});setTimeout(()=>c.remove(),dur);}
+function spawnBalloon(){const w=makeElt('div','floating');w.style.left=rand(5,92)+'vw';w.style.top='100vh';const b=makeElt('div','balloon');b.style.background=`hsl(${rand(0,360)},80%,70%)`;w.appendChild(b);effectsRoot.appendChild(w);const dur=rand(7000,14000);w.animate([{transform:'translateY(0)'},{transform:'translateY(-120vh)'}],{duration:dur});setTimeout(()=>w.remove(),dur);}
+function spawnHeart(){const e=makeElt('div','floating');e.style.left=rand(6,94)+'vw';e.style.top=rand(60,100)+'vh';e.appendChild(makeElt('div','heart'));effectsRoot.appendChild(e);const dur=rand(3500,7000);e.animate([{transform:'translateY(0)'},{transform:'translateY(-80vh)'}],{duration:dur});setTimeout(()=>e.remove(),dur);}
+function spawnSparkle(){const e=makeElt('div','floating');e.style.left=rand(4,96)+'vw';e.style.top=rand(8,88)+'vh';e.appendChild(makeElt('div','sparkle'));effectsRoot.appendChild(e);const dur=rand(1200,2400);e.animate([{opacity:0.6},{opacity:1},{opacity:0}],{duration:dur});setTimeout(()=>e.remove(),dur);}
+function spawnSnowflake(){const e=makeElt('div','floating snowflake');e.style.left=rand(4,96)+'vw';e.style.top='-10px';effectsRoot.appendChild(e);const dur=rand(7000,12000);e.animate([{transform:'translateY(0)'},{transform:'translateY(100vh)',opacity:0}],{duration:dur});setTimeout(()=>e.remove(),dur);}
+function spawnFirework(){const bx=rand(10,90),by=rand(20,70),n=12;for(let i=0;i<n;i++){const f=makeElt('div','firework-spark');f.style.left=bx+'vw';f.style.top=by+'vh';effectsRoot.appendChild(f);const a=(360/n)*i;const dist=rand(5,15);const dur=rand(600,1000);f.animate([{transform:'translate(0,0)'},{transform:`translate(${dist*Math.cos(a*Math.PI/180)}vw,${dist*Math.sin(a*Math.PI/180)}vh)`,opacity:0}],{duration:dur});setTimeout(()=>f.remove(),dur);}}
+
+let spawning=false;
+function startEffects(){if(spawning)return;spawning=true;
+for(let i=0;i<16;i++){setTimeout(()=>{spawnConfetti();spawnHeart();spawnSparkle();if(Math.random()>0.6)spawnBalloon();if(Math.random()>0.75)spawnSnowflake();if(Math.random()>0.9)spawnFirework();},i*120);}
+setInterval(()=>{spawnConfetti();if(Math.random()>0.4)spawnHeart();if(Math.random()>0.35)spawnSparkle();if(Math.random()>0.85)spawnBalloon();if(Math.random()>0.75)spawnSnowflake();if(Math.random()>0.9)spawnFirework();},500);
+}
+audio.addEventListener('play',()=>{startEffects();startVideos();});
+
+// Custom cursor
+const dot=document.createElement('div'),outline=document.createElement('div');
+dot.className='cursor-dot';outline.className='cursor-outline';document.body.append(dot,outline);
+window.addEventListener('mousemove',e=>{dot.style.top=outline.style.top=e.clientY+'px';dot.style.left=outline.style.left=e.clientX+'px';});
+</script>
+</body>
+</html>
